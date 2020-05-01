@@ -186,6 +186,7 @@ const Orders = (function () {
           '<p><b>Reciclatendero</b>:</p>' +
           '<img src="' + (data.nombre_recicla_tendero == null ? 'images/avatar.jpg' : data.foto) + '">' +
           '<p><b>' + nombre_recicla_tendero + '</b></p>' +
+          '<p><b>Placa</b>: ' + data.placa + '</p>' +
         '</div>' +
         '<div class="col-12">' +
           '<p><b>Objetos de la solicitud:</b></p><ul class="js-order-items"></ul>' +
