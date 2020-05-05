@@ -1022,7 +1022,7 @@ font-size:24px;
 line-height:42px;
 font-weight:900;
 letter-spacing:-0.5px;
-color:#060043;
+color:rgb(244, 247, 242);
 } 
 .slider-caption h2.title--white{
 color:#fff;
@@ -1037,8 +1037,8 @@ color:#445cfd;
 display:inline;
 } 
 .slider-caption p{
-color:#060043;
-font-size:14px;
+color:rgb(241, 244, 245);
+font-size:19px;
 line-height:20px;
 padding:0 0 20px 0;
 }
