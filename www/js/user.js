@@ -1,5 +1,6 @@
 const User = (function () {
   const checkSession = function (currentUser) {
+    $(document).on('submit', '.js-forgot-password', sendForgotPasswordForm);
     if (currentUser == null) {
       app.loadRegisterDepartments();
       setTimeout(function () {
@@ -214,6 +215,16 @@ const User = (function () {
       messageContainer.html('Ocurri&oacute; un problema, intente de nuevo m&aacute;s tarde');
     }).fail(function () {
       messageContainer.html('Ocurri&oacute; un problema, intente de nuevo m&aacute;s tarde');
+    });
+  };
+
+  const sendForgotPasswordForm = function (ev) {
+    ev.preventDefault();
+    let form = $(ev.target);
+    let request = $.ajax({
+      url: Variables.backendURL + 'user/process_forgot_email',
+      method: 'POST',
+      data: form.serialize()
     });
   };
 
