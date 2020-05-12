@@ -16,7 +16,8 @@ const Orders = (function () {
   const getOrderCategories = function () {
     let ajax = $.ajax({
       method: 'GET',
-      url: Variables.backendURL + 'category/get_categories'
+      url: Variables.backendURL + 'category/get_categories',
+      data: { tipo: 2 }
     });
     ajax.done(function (data) {
       if (!data || data.length < 1) {
