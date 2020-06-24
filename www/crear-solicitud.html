@@ -96,7 +96,10 @@
                       <input type="hidden" name="categorias" class="js-request-objects" value="">
                       <label for="date">Fecha de recogida</label>
                       <input id="date" type="date" name="fecha_recogida" value="" class="form_input" required />
+                      <input type="hidden" name="latitude" class="js-create-latitude" value="0">
+                      <input type="hidden" name="longitude" class="js-create-longitude" value="0">
                     </div>
+                    
                     <div class="form_row">
                       <label>Objetos a recoger:</label>
                       <ul class="form_row_right js-object-list"></ul>
@@ -212,6 +215,8 @@
     <script src="js/user.js"></script>
     <script src="js/app.js"></script>
     <script>const isCreateOrder = true;</script>
+    <script>function initMap() { }</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap"></script>
     <script src="js/orders.js"></script>
   </body>
 </html>
