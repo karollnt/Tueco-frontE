@@ -1,5 +1,10 @@
 const Orders = (function () {
   let categories = null;
+    let coordinates = {
+    latitude: 0,
+    longitude: 0
+  };
+  
 
   const init = function () {
     if (typeof isCreateOrder !== 'undefined' && isCreateOrder) {
@@ -53,9 +58,50 @@ const Orders = (function () {
 
   const setEvents = function () {
     $(document).on('submit', '.js-create-request-form', createOrder);
+    if (!navigator.geolocation) {
+      geolocateAddress();
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(setCoordinates, locationError, { timeout: 5000 });
+  };
+
+  const locationError = function (error) {
+    coordinates = {
+      latitude: 0,
+      longitude: 0
+    };
+    geolocateAddress();
+  };
+
+  const setCoordinates = function (position) {
+    coordinates = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    };
+  };
+
+  const geolocateAddress = function () {
+    if (typeof google === 'undefined') {
+      return;
+    }
+    const user = app.user;
+    const address = user.departamento + ', ' + user.ciudad + ', ' + user.direccion;
+    let geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == 'OK' && typeof results[0] !== 'undefined') {
+        const result = results[0];
+        coordinates = {
+          latitude: result.geometry.location.lat(),
+          longitude: result.geometry.location.lng()
+        };
+      }
+    });
+    
   };
 
   const createOrder = function (ev) {
+    $('.js-create-longitude').val(coordinates.longitude);
+    $('.js-create-latitude').val(coordinates.latitude);
     ev.preventDefault();
     const categoryCheckboxes = document.querySelectorAll('.js-category-item:checked');
     let categoryValues = '';
