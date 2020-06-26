@@ -226,6 +226,13 @@ const User = (function () {
       method: 'POST',
       data: form.serialize()
     });
+    request.done(function (data) {
+      if (data.valid == true) {
+        location.reload();
+        return;
+      }
+      alert('Ocurri&oacute; un problema, intente de nuevo m&aacute;s tarde');
+    });
   };
 
   return {
