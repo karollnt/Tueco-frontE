@@ -209,7 +209,10 @@ const User = (function () {
     });
     request.done(function (data) {
       if (data.valid == true) {
-        location.reload();
+        getUserData(app.user.id);
+        setTimeout(function () {
+          location.reload();
+        }, 500);
         return;
       }
       messageContainer.html('Ocurri&oacute; un problema, intente de nuevo m&aacute;s tarde');
