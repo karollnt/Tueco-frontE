@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#27830A">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
+  <title>Tu Eco</title>
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,900" rel="stylesheet">
+  <style>
+    .color-primary-0 { color: #27830A }	/* Main Primary color */
+    .color-primary-1 { color: #5AB63D }
+    .color-primary-2 { color: #3C9E1D }
+    .color-primary-3 { color: #186400 }
+    .color-primary-4 { color: #0F4000 }
+
+    .color-secondary-1-0 { color: #086351 }	/* Main Secondary color (1) */
+    .color-secondary-1-1 { color: #2E8977 }
+    .color-secondary-1-2 { color: #167764 }
+    .color-secondary-1-3 { color: #004C3D }
+    .color-secondary-1-4 { color: #003027 }
+
+    .color-secondary-2-0 { color: #6E920B }	/* Main Secondary color (2) */
+    .color-secondary-2-1 { color: #A7CB44 }
+    .color-secondary-2-2 { color: #8AB021 }
+    .color-secondary-2-3 { color: #527000 }
+    .color-secondary-2-4 { color: #354800 }
+
+    #pages_maincontent {bottom: 50px;}
+    .btn {padding: 12px 25px;}
+    .form_row {float: none;}
+  </style>
+</head>
+<body id="mobile_wrap">
+
+  <div class="panel-overlay"></div>
+
+  <div class="panel panel-left panel-reveal">
+    <!-- Slider -->
+    <div class="swiper-container-subnav multinav">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <nav class="main_nav_underline">
+            <ul>
+              <li><a href="index.html"><img src="images/icons/gray/home.png" alt="" title="" /><span>Inicio</span></a></li>
+              <li><a href="#" data-popup=".popup-login" class="open-popup js-open-login"><img src="images/icons/gray/lock.png" alt="" title="" /><span>Login</span></a></li>
+              <li><a href="about.html"><img src="images/icons/gray/mobile.png" alt="" title="" /><span>Acerca de</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-right panel-reveal">
+    <div class="user_login_info">
+
+      <div class="user_thumb">
+        <div class="user_details">
+          <p>Bienvenido(a), <span class="js-user-name-tag">user</span></p>
+        </div>
+        <div class="user_avatar"><img src="images/avatar3.jpg" class="js-user-image" alt="" title="" /></div>
+      </div>
+
+      <nav class="user-nav">
+        <ul>
+          <li><a href="features.html"><img src="images/icons/gray/settings.png" alt="" title="" /><span>Cuenta</span></a></li>
+          <li><a href="index.html" class="js-logout"><img src="images/icons/gray/logout.png" alt="" title="" /><span>Logout</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+    <div class="views display-none js-main-view">
+
+      <div class="view view-main">
+
+        <div class="pages">
+
+          <div data-page="index" class="page homepage">
+            <div class="page-content">
+
+              <div class="navbar navbar--fixed navbar--fixed-top">
+                <div class="navbar__col navbar__col--title">
+                  <a href="index.html"><p style="color:#FFFF" ;>Tu Eco</p></a>
+                </div>
+              </div>
+
+              <div id="pages_maincontent">
+                <h2 class="page_title">Mis solicitudes</h2>
+                <div class="page_single layout_fullwidth_padding">
+                  <ul class="shop_items js-orders-list"></ul>
+                </div>
+              </div>
+
+              <div class="swiper-container-toolbar swiper-toolbar">
+                <div class="swiper-pagination-toolbar"></div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide toolbar-icon">
+                    <a href="index.html"><img src="images/icons/blue/home.png" alt="" title="" /></a>
+                    <a href="#" data-panel="right" class="open-panel"><img src="images/icons/blue/user.png" alt="" title="" /></a>
+                    <a href="crear-solicitud.html"><img src="images/icons/blue/more.png" alt="" title="" /></a>
+                    <a href="solicitudes.html"><img src="images/icons/blue/tabs.png" alt="" title="" /></a>
+                    <a href="index.html" class="js-logout"><img src="images/icons/blue/logout.png" alt="" title="" /></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div class="popup popup-login">
+      <div class="content-block">
+        <h4>Inicia sesi&oacute;n</h4>
+        <div class="loginform">
+          <form id="LoginForm" class="js-login-form" method="post">
+            <input type="email" name="correo" value="" class="form_input required" placeholder="correo">
+            <input type="password" name="clave" value="" class="form_input required" placeholder="clave">
+            <div class="forgot_pass"><a href="#" data-popup=".popup-forgot" class="open-popup">Olvidaste tu clave?</a></div>
+            <input type="submit" name="submit" class="form_submit" id="submit" value="Iniciar sesi&oacute;n">
+            <p class="js-login-error"></p>
+          </form>
+          <div class="signup_bottom">
+            <p>No tienes una cuenta?</p>
+            <a href="#" data-popup=".popup-signup" class="open-popup">Reg&iacute;strate</a>
+          </div>
+        </div>
+        <div class="close_popup_button">
+          <a href="#" class="close-popup" data-popup=".popup-login"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Popup -->
+    <div class="popup popup-signup">
+      <div class="content-block">
+        <h4>Reg&iacute;strate</h4>
+        <div class="loginform">
+          <form id="RegisterForm" method="post" class="js-register-user">
+            <input type="text" name="nombre" value="" class="form_input required" placeholder="Nombre" />
+            <input type="text" name="apellido" value="" class="form_input required" placeholder="Apellido" />
+            <input type="email" name="email" value="" class="form_input required" placeholder="Email" />
+            <input type="tel" name="telefono" value="" class="form_input" placeholder="Telefono (opcional)" />
+            <input type="password" name="clave" value="" class="form_input required" placeholder="Clave" />
+            <div class="selector_overlay">
+              <select name="departamento" class="form_input required js-register-department" data-target=".js-register-city" required><option value="" selected>Departamento</option></select>
+            </div>
+            <div class="selector_overlay">
+              <select name="id_ciudad" class="form_input required js-register-city" required><option value="" selected>Ciudad</option></select>
+            </div>
+            <input type="text" name="direccion" value="" class="form_input required" placeholder="Direccion" />
+            <input type="hidden" name="id_perfil" value="1">
+            <input type="hidden" name="id_tipo_identidad" value="1">
+            <input type="hidden" name="identificacion" value="1">
+            <input type="submit" name="submit" class="form_submit" id="submitregister" value="Registrarse" />
+          </form>
+        </div>
+        <div class="close_popup_button">
+          <a href="#" class="close-popup" data-popup=".popup-signup"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Forgot Password Popup -->
+    <div class="popup popup-forgot">
+      <div class="content-block">
+        <h4>FORGOT PASSWORD</h4>
+        <div class="loginform">
+          <form id="ForgotForm" method="post" class="js-forgot-password">
+            <input type="text" name="email" value="" class="form_input required" placeholder="email" />
+            <input type="submit" name="submit" class="form_submit" id="submitforgot" value="RESEND PASSWORD" />
+          </form>
+          <div class="signup_bottom">
+            <p>Check your email and follow the instructions to reset your password.</p>
+          </div>
+        </div>
+        <div class="close_popup_button">
+          <a href="#" class="close-popup" data-popup=".popup-forgot"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.validate.min.js" ></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.custom.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/app.js"></script>
+    <script>const isListOrders = true;</script>
+    <script src="js/orders.js"></script>
+  </body>
+</html>
