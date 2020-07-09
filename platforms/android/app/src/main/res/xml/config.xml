@@ -22,6 +22,21 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/icon/android/icon.png" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="res/icon/android/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="res/icon/android/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="res/icon/android/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="res/icon/android/drawable-xxxhdpi-icon.png" />
+    <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+    <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />
+    <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+    <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png" />
+    <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+    <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

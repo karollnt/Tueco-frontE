@@ -6,6 +6,12 @@
   "version": "io.cordova.hellocordova",
   "description": "App for Tu Eco services",
   "author": "Tu Eco Team",
-  "icons": [],
+  "icons": [
+    {
+      "src": "res/icon/android/icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
   "start_url": "index.html"
 }
